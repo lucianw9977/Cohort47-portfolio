@@ -1,0 +1,612 @@
+// styles.scss
+
+@import 'variables';
+@import 'typography';
+
+// First section
+header {
+    background-color: $section1-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    position: relative;
+
+    nav {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 0 10px;
+
+                a {
+                    color: $menu-link-color;
+                    text-decoration: none;
+                    transition: color 0.2s ease-in-out;
+
+                    &:hover {
+                        color: $button-bg-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h1 {
+            color: $name-color;
+            margin: 0;
+            font-size: 3.5rem;
+        }
+
+        p {
+            color: $name-color;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: $button-bg-color;
+            color: $paragraph-color;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: $paragraph-font;
+            font-weight: $semibold;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: background-color 0.2s ease-in-out;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: darken($button-bg-color, 10%);
+            }
+        }
+    }      
+}
+
+// Second section
+section.about {
+    background-color: $section2-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        color: $about-title-color;
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: $paragraph-color;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+// Third section
+section.skills {
+    background-color: $section3-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 25vh;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        color: $paragraph-color;
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .skills-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 80px;
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            img {
+                width: 50px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: $paragraph-color;
+            }
+        }
+    }
+}
+
+// Fourth section
+section.projects {
+    background-color: $section4-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        color: $section1-bg-color;
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .project-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        overflow: hidden;
+
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+
+            img {
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            img:hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .project-info {
+                display: flex;
+                flex-direction: column;
+                text-align: right;
+                gap: 10px;
+                max-width: 500px;
+                margin: 0 auto;
+
+                h3 {
+                    color: $paragraph-color;
+                    font-size: 2rem;
+                    font-family: $paragraph-font;
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 10px;
+
+                    button {
+                        background-color: $button-bg-color;
+                        color: #A9502F;
+                        padding: 10px 15px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+
+                    a {
+                        text-decoration: none;
+                    }
+
+                    button:hover {
+                        background-color: #A9502F;
+                        color: $paragraph-color;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .project-1 {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            margin: 0 auto;
+            align-items: flex-start;
+
+            img {
+                margin-right: 120px;
+            }
+
+            .buttons {
+                justify-content: flex-start;
+            }
+
+            .project-info {
+                text-align: left;
+            }
+        }
+
+        .project-2 {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            margin: 0 auto;
+            align-items: flex-start;
+
+            img {
+                margin-left: 120px;
+            }
+
+            .buttons {
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+// Fifth section
+section#contact {
+    background-color: $section5-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        color: $name-color;
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 20px;
+        color: $button-bg-color;
+
+        li {
+            a {
+                color: $button-bg-color;
+                text-decoration: none;
+                font-size: 2rem;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: $name-color;
+                    transform: translateY(-10px);
+                }
+            }
+
+            &:nth-child(1) a:hover {
+                color: $button-text-color;
+            }
+
+            &:nth-child(2) a:hover {
+                color: $button-text-color;
+            }
+
+            &:nth-child(3) a:hover {
+                color: $button-text-color;
+            }
+
+            &:nth-child(4) a:hover {
+                color: $button-text-color;
+            }
+        }
+    }
+
+    p {
+        color: $name-color;
+        margin: 20px 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        color: $name-color;
+
+        label {
+            align-self: flex-start;
+        }
+
+        input {
+            width: 700px;
+            height: 50px;
+        }
+
+        textarea {
+            width: 700px;
+            height: 140px;
+        }
+
+        button {
+            background-color: $button-bg-color;
+            color: $paragraph-color;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: $paragraph-font;
+            font-weight: $semibold;
+            font-size: 1.2rem;
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover {
+                background-color: darken($button-bg-color, 10%);
+            }
+        }
+    }
+}
+
+// Sixth Section
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: $section6-bg-color;
+    color: $name-color;
+}
+
+
+// Media queries
+@media screen and (max-width: 760px) {
+
+    header nav {
+        position: static;
+        transform: none;
+        left: 0;
+        top: 0;
+    }
+
+    /* Hide menu initially */
+    .menu {
+        display: none;
+    }
+
+    /* Show hamburger menu */
+    .hamburger-menu {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+        width: 30px;
+        height: 3px;
+        background-color: $button-bg-color;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Rotate icon when menu is opened */
+    .hamburger.open {
+        transform: rotate(45deg);
+    }
+
+    /* Top bar of icon when menu is opened */
+    .hamburger.open::before {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Bottom bar of icon when menu is opened */
+    .hamburger.open::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Menu items */
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        height: 39%;
+        padding: 20px;
+        background-color: $button-bg-color;
+        z-index: 0;
+        transform: translateX(-100%);
+        transition: all 0.5s ease-in-out;
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: $button-bg-color;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transition: color 0.2s ease-in-out;
+
+            // &:hover {
+            //     color: $button-bg-color;
+            // }
+        }
+    }
+
+    .menu.open {
+        transform: translateX(0);
+        background-color: rgba(255, 255, 255, 0.95);
+
+        a:hover {
+            color: brown;
+        }
+    }
+
+    .menu.open li {
+        animation: bounceIn 0.5s ease-in-out forwards;
+        animation-delay: calc(0.1s * var(--menu-item));
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        60% {
+            opacity: 1;
+            transform: translateY(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Rotate hamburger menu when open */
+    .hamburger-menu.open .hamburger {
+        transform: rotate(45deg);
+    }
+
+    .hamburger-menu.open .hamburger::before,
+    .hamburger-menu.open .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $button-bg-color;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hamburger-menu.open .hamburger::before {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .hamburger-menu.open .hamburger::after {
+        bottom: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Hamburger menu icon color when open */
+    .hamburger-menu.open .hamburger,
+    .menu.open a {
+        color: $button-bg-color;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    li,
+    label,
+    input,
+    textarea,
+    button,
+    span {
+        font-size: 0.8rem;
+    }
+
+    section.projects {
+        .project-wrapper {
+            .project {
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+                .project-info {
+                    text-align: center;
+                    max-width: 100%;
+
+                    .buttons {
+                        justify-content: center;
+                    }
+                }
+            }   
+        }
+    }
+
+    section#contact {
+        ul {
+            flex-wrap: nowrap;
+            gap: 5px;
+        }
+    
+        li {
+            a {
+                font-size: 1.5rem;
+            }
+        }
+
+        form label {
+            align-self: center;
+        }
+    
+        form {
+            gap: 10px;
+    
+            input,
+            textarea {
+                width: calc(100% + 100px);
+            }
+        }
+    } 
+}
+
+
+             
+
+
+
+
+
+

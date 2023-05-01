@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@600&display=swap');
+
+$heading-font: 'Playfair Display', serif;
+$paragraph-font: 'Source Sans Pro', sans-serif;
+$bold-italic: bold italic;
+$semibold: 600;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    font-weight: $bold-italic;
+}
+
+body,
+p,
+button,
+input,
+textarea {
+    font-family: $paragraph-font;
+    font-weight: $semibold;
+}
