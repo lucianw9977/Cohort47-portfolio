@@ -80,7 +80,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
     position: relative;
 
     nav {
@@ -151,6 +151,10 @@ header {
             }
         }
     }      
+}
+
+.dud {
+    color: transparent;
 }
 
 // Second section
