@@ -84,3 +84,19 @@ const ScrambleTextEffect = (() => {
         updateScramble(scrambledName, 'lucian wang', 1000, 2500);
     });
 })();
+
+
+// Contact Form Submission Handling
+const ContactForm = (() => {
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Show an alert after successful form submission
+            alert("Your message has been submitted successfully!");
+        });
+    });
+})();
+
