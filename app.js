@@ -42,9 +42,10 @@ const Preloader = (() => {
     });
 })();
 
+
 // ScrambleTextEffect
 const ScrambleTextEffect = (() => {
-    function scrambleText(el, text) {
+    function scrambleText(el, text, scrambleDuration) {
         const chars = '!<>-_\\/[]{}—=+*^?#________';
         let scrambledText = '';
 
@@ -57,46 +58,73 @@ const ScrambleTextEffect = (() => {
         }
 
         el.innerHTML = scrambledText;
+        setTimeout(() => {
+            el.innerHTML = text;
+        }, scrambleDuration);
     }
 
     function updateScramble(el, text, scrambleDuration, pauseDuration) {
-        let scrambleStartTime = Date.now();
         const scramble = () => {
-            const elapsedTime = Date.now() - scrambleStartTime;
-
-            if (elapsedTime < scrambleDuration) {
-                scrambleText(el, text);
-                requestAnimationFrame(scramble);
-            } else {
-                el.innerHTML = text;
-                setTimeout(() => {
-                    scrambleStartTime = Date.now();
-                    scramble();
-                }, pauseDuration);
-            }
+            scrambleText(el, text, scrambleDuration);
         };
 
+        setInterval(scramble, scrambleDuration + pauseDuration);
         scramble();
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const scrambledName = document.getElementById('scrambled-name');
-        updateScramble(scrambledName, 'lucian wang', 1000, 2500);
+        updateScramble(scrambledName, 'lucian wang', 2000, 3000); // Set scrambleDuration to 2000 and pauseDuration to 3000
     });
 })();
 
 
+
+
+
+
+
 // Contact Form Submission Handling
+// Initialize EmailJS
 const ContactForm = (() => {
     document.addEventListener("DOMContentLoaded", function() {
         const form = document.querySelector("form");
 
+        // Initialize EmailJS
+        emailjs.init("w6i9t3I933T9G0qMs");
+
         form.addEventListener("submit", function(e) {
             e.preventDefault();
-            
-            // Show an alert after successful form submission
-            alert("Your message has been submitted successfully!");
+
+            // Collect form data
+            const name = document.querySelector("#name").value;
+            const email = document.querySelector("#email").value;
+            const message = document.querySelector("#message").value;
+
+            // Prepare email parameters
+            const emailParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_email: "lucianw9797@gmail.com",
+            };
+
+            // Send email
+            emailjs.send("default_service", "template_fz9r4s8", emailParams)
+                .then(() => {
+                    alert("Your message has been submitted successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error sending email:", error);
+                    alert("An error occurred while sending your message. Please try again later.");
+                });
         });
     });
 })();
+
+
+
+
+
+
 
